@@ -1,0 +1,12 @@
+<div class="mw9 center ph3-ns"
+    [style.background]="background()">
+  <div class="cf ph2-ns pointer"
+    (click)="dialogService.editFixture(fixture)">
+    <div class="fl w-100 w-50-ns pa2">
+      <div class="pv2 tc white b f1">{{fixture.awayTeam}}</div>
+    </div>
+    <div class="fl w-100 w-50-ns pa2">
+      <div class="pv2 tc white b f1">{{fixture.homeTeam}}</div>
+    </div>
+  </div>
+</div>

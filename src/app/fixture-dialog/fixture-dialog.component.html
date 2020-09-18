@@ -1,0 +1,57 @@
+<div class="z-0
+	    bg-gray o-50
+	    fixed absolute--fill
+	    t-0 l-0"
+         *ngIf="dialogService.show"
+         (click)="dialogService.toggle()">
+    </div>
+
+    <div class="z-1
+		b--black-80 black-80 bg-white bw1 ba
+		fixed t-50 l-50 translate-center w-90 w-50-ns
+		ma2 pa1 ph3
+        all-pro"
+         *ngIf="dialogService.show">
+
+        <span class="fr f3 pointer" (click)="dialogService.toggle()">&times;</span>
+
+        <div class="center pv2">
+            <form>
+                <fieldset class="ba b--transparent ph0 mh0">
+                    <legend class="f4 fw6">Fixture</legend>
+                    <p class="">Select the teams for this fixture</p>
+                    <div class="mt3">
+                        <label class="db fw6 lh-copy f6" for="away-team">Away team</label>
+                        <select
+                            #awayTeam
+                            (change)="dialogService.updateFixture(awayTeam.value, homeTeam.value)"
+                            name="away-team">
+                                <option *ngFor="let team of teamsService.teams" [value]="team.id">
+                                    {{team.name}}
+                                </option>
+                        </select>
+                    </div>
+                    <div class="mv3">
+                        <label class="db fw6 lh-copy f6" for="home-team">Home team</label>
+                        <select
+                            #homeTeam
+                            (change)="dialogService.updateFixture(awayTeam.value, homeTeam.value)"
+                            name="home-team">
+                                <option *ngFor="let team of teamsService.teams" [value]="team.id">
+                                    {{team.name}}
+                                </option>
+                        </select>
+                    </div>
+                </fieldset>
+                <div>
+                    <button class="b ph3 pv2 input-reset
+        				b--black-80 black-80 bg-white bw1 ba
+				        pointer dib"
+                        type="button"
+                        (click)="dialogService.saveFixture()">
+                            Save
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
