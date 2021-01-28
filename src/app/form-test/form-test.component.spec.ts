@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WeekContainerComponent } from './week-container.component';
+import { FormTestComponent } from './form-test.component';
 
-describe('WeekContainerComponent', () => {
-  let component: WeekContainerComponent;
-  let fixture: ComponentFixture<WeekContainerComponent>;
+describe('FormTestComponent', () => {
+  let component: FormTestComponent;
+  let fixture: ComponentFixture<FormTestComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WeekContainerComponent ]
+      declarations: [ FormTestComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WeekContainerComponent);
+    fixture = TestBed.createComponent(FormTestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

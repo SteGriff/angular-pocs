@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Week } from './types/week';
 import { Fixture } from './types/fixture';
-import { DialogService } from './dialog.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +9,7 @@ import { DialogService } from './dialog.service';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private dialogService: DialogService) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.addWeek();

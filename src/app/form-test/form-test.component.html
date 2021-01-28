@@ -1,0 +1,38 @@
+<h2>FormControl default behaviour:</h2>
+<p>When you change one input, it sets the underlying value, but its twin field isn't updated, even though they're bound to the same source. Try typing in one box, then the other.</p>
+
+<div class="mv2 pa1 ba">
+    <p>These two controls are bound to the same <code>formControl</code></p>
+    <label>Name:<input [formControl]="yourName" placeholder="Name"></label>
+    <label>Echo:<input [formControl]="yourName" placeholder="Name"></label>
+    <p>Value of Name: {{yourName.value}}</p>
+</div>
+
+<div class="mv2 pa1 ba">
+    <form [formGroup]="aForm">
+        <p>These two controls are bound to the same <code>formControlName</code> in a FormGroup</p>
+        <label>Age:<input formControlName="age" placeholder="Age"></label>
+        <label>Echo:<input formControlName="age" placeholder="Age"></label>
+        <p>Value of Age: {{aForm.controls.age.value}}</p>
+    </form>
+</div>
+
+<h2>After applying a hack</h2>
+<p>We'll put on this stupid hack that lets each control be aware that its twin has changed:</p>
+<pre><code class="f6 dark-blue">{{codeSample}}</code></pre>
+
+<div class="mv2 pa1 ba">
+    <p>These two controls are bound to the same <code>formControl</code></p>
+    <label>Flavour:<input [formControl]="flavour" placeholder="Flavour"></label>
+    <label>Echo:<input [formControl]="flavour" placeholder="Flavour"></label>
+    <p>Value of Flavour: {{flavour.value}}</p>
+</div>
+
+<div class="mv2 pa1 ba">
+    <form [formGroup]="anotherForm">
+        <p>These two controls are bound to the same <code>formControlName</code> in a FormGroup</p>
+        <label>Scoops:<input formControlName="scoops" placeholder="Num of Scoops"></label>
+        <label>Echo:<input formControlName="scoops" placeholder="Num of Scoops"></label>
+        <p>Value of Scoops: {{anotherForm.controls.scoops.value}}</p>
+    </form>
+</div>
